@@ -1,1 +1,18 @@
 
+name: HELLO
+description: 'Hello to you'
+inputs:
+    name:
+      description: 'The name who you want to say hello to.'
+      required: true
+
+# Define your outputs here.
+outputs:
+  time:
+    description: The time we greeted you
+    
+runs:
+  using: docker
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.name }}
